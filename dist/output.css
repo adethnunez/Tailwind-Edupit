@@ -799,6 +799,7 @@ video {
   border-bottom-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  font-size: .9rem;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -840,7 +841,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
 @media (min-width: 1024px) {
@@ -857,10 +858,6 @@ video {
   transition-duration: 300ms;
   transition-timing-function: linear;
 }
-
-/* .header__nav i.open{
-        @apply hover:text-red-300 ;
-    } */
 
 .header__nav.open {
   top: 9rem;
@@ -902,31 +899,9 @@ video {
   }
 }
 
-.dropdown h4 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  border-bottom-width: 2px;
-  text-align: left;
-  font-size: 2rem;
-  --tw-text-opacity: 1;
-  color: rgb(80 186 135 / var(--tw-text-opacity));
-}
-
-@media (min-width: 1024px) {
-  .dropdown h4 {
-    border-color: transparent;
-  }
-}
-
 .dropdown ul {
   margin: 0.75rem;
   flex-direction: column;
-}
-
-@media (min-width: 1024px) {
-  .dropdown ul li {
-    border-top-width: 0px;
-  }
 }
 
 .dropdown ul li a {
@@ -965,25 +940,14 @@ video {
   .dropdown.open {
     display: none;
   }
-
-  .header__nav__container {
-    --tw-bg-opacity: 1;
-    background-color: rgb(50 50 50 / var(--tw-bg-opacity));
-  }
-
-  .header__nav ul li:last-child .dropdown {
-    left: 0px;
-  }
-
-  .header__nav ul li:last-child .dropdown ul {
-    display: grid;
-    width: 30rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-right-width: 2px;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
 }
+
+/* .head{
+        @apply sm:hidden lg:flex 
+    } 
+    .head__nav ul{
+        @apply flex
+    } */
 
 .font-bold {
   font-weight: 700;
@@ -1003,17 +967,7 @@ video {
   }
 }
 
-.hover\:text-green-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(74 222 128 / var(--tw-text-opacity));
-}
-
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
   color: rgb(14 181 130 / var(--tw-text-opacity));
-}
-
-.hover\:text-blue-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(191 219 254 / var(--tw-text-opacity));
 }
