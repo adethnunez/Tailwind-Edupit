@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply mx-auto p-[1.5rem] w-full max-w-[140rem] lg:max-w-[90rem];
+}
+
+@layer components{
+    .logo{
+        @apply p-[1.4rem] bg-red-400 relative lg:hidden
+    }
+    .logo__img img{
+        @apply mx-auto 
+    }
+
+    .admin{
+        @apply bg-primary sm:hidden lg:flex 
+    }
+    .admin__wrapper{
+        @apply flex gap-[6rem] text-light font-semibold
+    }
+    .admin__text{
+        @apply flex gap-[2rem]
+    }
+    .admin__number{
+        @apply cursor-pointer
+    }
+    .admin__icon {
+        @apply mx-auto
+    }
+    .admin__icon ul{
+        @apply flex gap-[2rem] 
+    }
+    .admin__icon li{
+        @apply hover:text-dark
+    }
+    .admin__contact{
+        @apply flex
+    }
+    .admin__contact ul{
+        @apply flex gap-[1rem]
+    }
+    .admin__contact a {
+        @apply gap-[2rem] 
+    }
+
+    .header{
+        @apply bg-primary lg:hidden
+    }
+    .header__top{
+        @apply text-light flex 
+    }
+    .header__top h5{
+        @apply  text-[1.1rem] font-semibold pt-[.8rem] 
+    }
+    .toggle__menu{
+        @apply px-[.3rem] py-[1rem] mx-auto mr-0 lg:hidden ;
+    }
+    .toggle__menu span{
+        @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full duration-[.5s] ease-in ;
+    }
+    .toggle__menu span:nth-child(2){
+        @apply my-[.3rem];
+    }
+    .toggle__menu.open span:nth-child(1){
+        @apply origin-center translate-y-[.5rem] rotate-[45deg] transition-all bg-light w-[1.5rem];
+    }
+    .toggle__menu.open span:nth-child(2){
+        @apply opacity-0 transition-all bg-dark;
+    }
+    .toggle__menu.open span:nth-child(3){
+        @apply origin-center -translate-y-[.7rem] rotate-[-50deg] transition-all bg-light w-[1.5rem];
+    }
+
+    .header__nav{
+        @apply bg-light lg:bg-transparent absolute flex flex-col  left-0 w-[100%] top-[9rem] overflow-hidden max-h-[0] text-center lg:relative lg:overflow-visible lg:h-[100%] lg:flex-row-reverse lg:items-center lg:justify-between lg:w-full lg:max-w-[70rem] lg:mx-auto lg:left-0  transition-[.5s] z-[999];
+    }
+    .header__nav ul{
+        @apply lg:flex transition-all ;
+    }
+    .header__nav ul li{
+        @apply  my-1 lg:my-0 lg:border-t-4 lg:border-transparent lg:hover:border-primary transition-all;
+    }
+    .header__nav ul li a{
+        @apply  lg:text-white  transition-all border-b-2 border-gray-400;
+    }
+    
+    .header__nav ul li a{
+        @apply lg:hover:bg-slate-600;
+    }
+    .header__nav ul li:hover .dropdown{
+        @apply lg:overflow-visible lg:top-[3.8rem] lg:max-h-[40rem] opacity-100 transition-all;
+    }
+    .header__nav ul li:first-child{
+        @apply lg:border-primary;
+    }
+    .header__nav ul li a{
+        @apply flex items-center justify-between p-4;
+    }
+    .header__nav ul li a i{
+        @apply lg:hidden;
+    }
+      .header__nav i{
+        @apply transition ease-linear duration-300;
+    }
+
+    /* .header__nav i.open{
+        @apply hover:text-red-300 ;
+    } */
+    .header__nav.open{
+        @apply duration-500 top-[9rem] left-0 max-h-max transition-all lg:top-0;
+    }
+    .dropdown{
+        @apply max-h-0 bg-white overflow-hidden transition-all lg:absolute lg:top-[6rem] lg:overflow-hidden lg:opacity-0 lg:max-h-0 lg:text-dark lg:flex duration-500 z-[999];
+    }
+    .dropdown__item{
+        @apply lg:mx-[1rem] ;
+    }
+    .dropdown h4{
+        @apply text-[2rem] text-left text-[#50ba87] mx-3 border-b-2 lg:border-transparent;
+    }
+    .dropdown ul{
+        @apply flex-col m-3;
+    }
+    .dropdown ul li{
+        @apply lg:border-t-0 ;
+    }
+    .dropdown ul li a{
+        @apply h-[1rem] lg:text-dark lg:hover:bg-transparent lg:translate-x-1 lg:hover:translate-x-0 lg:hover:text-dark lg:border-transparent lg:border-l-4 lg:hover:border-primary;
+    }
+    .dropdown.open{
+        @apply max-h-full transition-all lg:hidden;
+    }
+    .header__nav__icons{
+        @apply  p-5 border-b-2 w-full mb-5 lg:flex lg:p-0 lg:mb-0 lg:border-0 lg:gap-3 lg:mr-5 lg:w-[unset];
+    }
+    .header__nav__icons a{
+        @apply text-[1.5rem] hover:text-primary lg:text-white transition-all duration-500 mx-1;
+    }
+    .header__nav__container{
+        @apply lg:bg-dark;
+    }
+    .header__nav ul li:last-child .dropdown{
+        @apply lg:left-0;
+    }
+    .header__nav ul li:last-child .dropdown ul{
+        @apply lg:grid lg:grid-cols-2 lg:border-r-2 lg:px-5 lg:w-[30rem];
+    }
+
+}
