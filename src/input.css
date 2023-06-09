@@ -5,10 +5,41 @@
 .container{
     @apply mx-auto p-[1.5rem] w-full max-w-[140rem] lg:max-w-[90rem];
 }
+.banner button {
+@apply sm:hidden
+}
+.banner .tns-nav{
+    @apply absolute right-3 top-[45%] z-40 flex flex-col lg:top-[50%] lg:right-[20rem];
+}
+.tns-controls{
+    @apply absolute top-[50%] right-0 left-0 mx-[2rem] flex items-center justify-between max-w-[106rem] z-10;
+}
+.tns-controls button{
+    @apply flex items-center;
+}
+.tns-controls button:first-child{
+    @apply  text-gray-500 transition-all hover:-translate-x-1 hover:text-primary;
+}
+.tns-controls button:last-child{
+    @apply  text-gray-500 transition-all hover:translate-x-1 hover:text-primary;
+}
+.tns-controls button:first-child::after{
+    @apply block bg-gray-500 w-[2rem] h-[.11rem] content-[""] hover:translate-x-2 hover:bg-primary transition-all;
+}
+.tns-controls button:last-child::before{
+    @apply block bg-gray-500 w-[2rem] h-[.11rem] content-[""] hover:-translate-x-2 hover:bg-primary transition-all;
+}
+.tns-nav button{
+    @apply bg-gray-400 h-[1rem] w-[1rem] my-1 mx-1 transition-all;
+}
+.tns-nav .tns-nav-active{
+    @apply bg-primary transition-all;
+}
+
 
 @layer components{
     .logo{
-        @apply p-[1.4rem] bg-red-400 relative lg:hidden
+        @apply p-[1.4rem] bg-light relative lg:hidden
     }
     .logo__img img{
         @apply mx-auto 
@@ -128,13 +159,77 @@
         @apply text-[1.5rem] hover:text-primary lg:text-white transition-all duration-500 mx-1;
     }
 
-    /* .head{
-        @apply sm:hidden lg:flex 
+     .head{
+        @apply sm:hidden lg:flex bg-dblue p-[1.5rem] my-[4rem] mx-[22rem] m-auto
     } 
+    .head__logo img{
+        @apply m-auto mr-[5rem]
+    }
+    .head__nav__container{
+        @apply lg:flex gap-[2rem]
+    }
     .head__nav ul{
-        @apply flex
-    } */
+        @apply ml-[5rem] flex transition-all  gap-[2rem];
+    } 
+    .head__nav ul li{
+        @apply my-1;
+    }
+    .head__nav ul li a{
+        @apply  hover:text-primary lg:text-light  transition-all;
+    }
+    .head__nav i{
+        @apply text-[.8rem] ml-[.5rem];
+    }
+      .head__nav ul li:hover .dropdown{
+        @apply lg:overflow-visible lg:top-[15rem] lg:max-h-[45rem] opacity-100 transition-all bg-primary;
+    }
+    .head__nav ul li:first-child{
+        @apply lg:border-primary;
+    }
+    .head__nav ul li a{
+        @apply flex items-center justify-between p-4;
+    }
+    .head__nav ul li a i{
+        @apply lg:hidden;
+    }
 
-    
-
+    .banner{
+        @apply relative
+    }
+    .slider__item_1{
+        @apply bg-bg__banner bg-cover bg-no-repeat bg-fixed h-[75vh] lg:h-[70vh] bg-center w-[30rem] lg:w-[100vw]
+    }
+    .slider__item_2{
+        @apply bg-bg__banner bg-cover bg-no-repeat bg-fixed h-[75vh] lg:h-[70vh] bg-center w-[30rem] lg:w-[100vw]
+    }
+    .slider__item_1 img{
+        @apply sm:hidden lg:flex
+    }
+    .slider__item_2 img{
+        @apply sm:hidden lg:flex
+    }
+    .slider__text{
+        @apply text-light text-center pt-[10rem]  font-semibold
+    }
+    .slider__text h1{
+        @apply text-[2rem] mx-auto w-[23rem]
+    }
+    .slider__text P{
+        @apply text-[1.2rem] mx-auto w-[25rem]
+    }
+    .discover__btn{
+        @apply  mt-[4rem] font-semibold flex gap-[2rem] justify-center;
+    }
+    .discover__btn a:first-child{
+        @apply text-center text-light bg-primary border-[2px] border-primary px-[2rem] py-[1rem] w-[11rem] h-[4rem] ;
+    }
+    .discover__btn a:first-child:hover{
+        @apply border-dark bg-dark text-light transition-all duration-500;
+    }
+    .discover__btn a:last-child{
+        @apply   text-primary px-[1.7rem] py-[.8rem] bg-transparent border-[2px] border-primary w-[11rem] h-[4rem];
+    }
+    .discover__btn a:last-child:hover{
+        @apply bg-primary text-light border-primary transition-all duration-500;
+    }
 }

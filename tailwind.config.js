@@ -17,6 +17,9 @@ module.exports = {
         'xl': '1280px',
         '2xl': '1536px',
       },
+      backgroundImage:{
+        'bg__banner': 'url("./img/bg_img.jpg")',
+      }
     },
   },
   plugins: [],

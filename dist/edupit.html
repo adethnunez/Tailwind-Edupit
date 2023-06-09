@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDUPIT</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <script src="https://kit.fontawesome.com/c0a9717a9e.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -192,7 +193,7 @@
     </div>
    </div>
 
-   <!-- <div class="head">
+   <div class="head">
     <div class="head__wrapper">
         <div class="head__logo">
             <img src="./img/logo-white.png" alt="">
@@ -330,9 +331,41 @@
                
             </ul>
         </div>
-
+        <div class="sign__log">
+            <a href="">Get a Quote</a>
+        </div>
     </div>
-   </div> -->
+   </div>
+   <div class="banner">
+    <div class="banner__wrapper">
+        <div class="banner__container">
+            <div class="slider__item_1">
+                <img src="./img/banner1.png" alt="">
+                <div class="slider__text">
+                    <h1>Education is the Backbone of the Nation.</h1>
+                    <p>Get the most of reduction in your team's operaating creates amazing UI/UX experiences.</p>
+                </div>
+                <div class="discover__btn">
+                    <a href="" class="btn primary">START TRIAL</a>
+                    <a href="" class="btn wth"><span></span>VIEW COURSES</a>
+                </div>
+            </div>
+            <div class="slider__item_2">
+                <img src="./img/banner2.png" alt="">
+                <div class="slider__text">
+                    <h1>Education is the Backbone of the Nation.</h1>
+                    <p>Get the most of reduction in your team's operaating creates amazing UI/UX experiences.</p>
+                </div>
+                <div class="discover__btn">
+                    <a href="" class="btn primary">START TRIAL</a>
+                    <a href="" class="btn wth"><span></span>VIEW COURSES</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   
+   
    
 
 
@@ -340,5 +373,18 @@
 
 
     <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script type="module">
+        var slider = tns({
+          container: '.banner__container',
+          items: 1,
+          slideBy: 'page',
+          autoplay: true,
+          axis: 'horizontal',
+          controls: false,
+          mouseDrag:true,
+        });
+            
+        </script>
 </body>
 </html>
