@@ -30,12 +30,28 @@
     @apply block bg-gray-500 w-[2rem] h-[.11rem] content-[""] hover:-translate-x-2 hover:bg-primary transition-all;
 }
 .tns-nav button{
-    @apply bg-gray-400 h-[1rem] w-[1rem] my-1 mx-1 transition-all;
+    @apply bg-gray-400 h-[1rem] w-[1rem] my-1 mx-1 transition-all sm:hidden;
 }
 .tns-nav .tns-nav-active{
     @apply bg-primary transition-all;
 }
 
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.8rem] px-[1.5rem] border-transparent
+    }
+
+    .green{
+        @apply text-[1.2rem] bg-primary rounded-[.3rem] hover:bg-dark transition ease-in-out duration-300 font-[600]
+    }
+
+    .shallow-green{
+        @apply text-[1.2rem] bg-transparent rounded-[.3rem] border-[1px] border-primary hover:bg-primary transition ease-in-out duration-300 font-[600]
+    }
+    .shallow-white{
+        @apply text-[1.2rem] bg-transparent border-[1px] border-grey rounded-[.3rem] text-dark hover:text-light hover:bg-primary hover:border-primary transition ease-in-out duration-300
+    }
+}
 
 @layer components{
     .logo{
@@ -76,38 +92,31 @@
         @apply gap-[2rem] 
     }
 
-    .header{
-        @apply bg-primary lg:hidden
-    }
-    .header__top{
-        @apply text-light flex 
-    }
-    .header__top h5{
-        @apply  text-[1.1rem] font-semibold pt-[.8rem] 
-    }
-    .toggle__menu{
-        @apply px-[.3rem] py-[1rem] mx-auto mr-0 lg:hidden ;
-    }
-    .toggle__menu span{
-        @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full duration-[.5s] ease-in ;
-    }
-    .toggle__menu span:nth-child(2){
-        @apply my-[.3rem];
-    }
-    .toggle__menu.open span:nth-child(1){
-        @apply origin-center translate-y-[.5rem] rotate-[45deg] transition-all bg-light w-[1.5rem];
-    }
-    .toggle__menu.open span:nth-child(2){
-        @apply opacity-0 transition-all bg-dark;
-    }
-    .toggle__menu.open span:nth-child(3){
-        @apply origin-center -translate-y-[.7rem] rotate-[-50deg] transition-all bg-light w-[1.5rem];
+     /** ---------- MOBILE HEADER ---------- */
+
+     .header-mob{
+        @apply lg:hidden
     }
 
+    .branding{
+        @apply bg-light flex justify-center py-[1rem]
+    }
+
+    .header-mob__wrapper{
+        @apply relative bg-primary
+    }
+
+    .header-mob__content{
+        @apply flex items-center justify-between
+    }
+
+    .header-mob__text{
+        @apply text-light text-[1.2rem] font-[600]
+    }
 
     .header__nav{
-        @apply bg-light lg:bg-transparent absolute flex flex-col  left-0 w-[100%] top-[9rem] overflow-hidden max-h-[0] text-center lg:relative lg:overflow-visible lg:h-[100%] lg:flex-row-reverse lg:items-center lg:justify-between lg:w-full lg:max-w-[70rem] lg:mx-auto lg:left-0  transition-[.5s] z-[999] ;
-    }
+        @apply max-h-0 overflow-hidden bg-light lg:bg-transparent absolute flex flex-col  left-0 w-[100%] top-[9rem] text-center lg:relative lg:overflow-visible lg:h-[100%] lg:flex-row-reverse lg:items-center lg:justify-between lg:w-full lg:max-w-[70rem] lg:mx-auto lg:left-0  transition-[.5s] z-[999] ;
+    }-[0]
     .header__nav ul{
         @apply lg:flex transition-all ;
     }
@@ -136,9 +145,10 @@
       .header__nav i{
         @apply transition ease-linear duration-300;
     }
+    
 
     .header__nav.open{
-        @apply duration-500 top-[9rem] left-0 max-h-max transition-all lg:top-0;
+        @apply duration-500 top-[12rem] max-h-fit left-0 transition-all lg:top-0;
     }
     .dropdown{
         @apply max-h-0 bg-white overflow-hidden transition-all lg:absolute lg:top-[6rem] lg:overflow-hidden lg:opacity-0 lg:max-h-0 lg:text-dark lg:flex duration-500 z-[999];
@@ -159,39 +169,86 @@
         @apply text-[1.5rem] hover:text-primary lg:text-white transition-all duration-500 mx-1;
     }
 
-     .head{
-        @apply sm:hidden lg:flex bg-dblue p-[1.5rem] my-[4rem] mx-[22rem] m-auto
-    } 
-    .head__logo img{
-        @apply m-auto mr-[5rem]
+    .toggle__menu.open span{
+        @apply z-10 bg-light
     }
-    .head__nav__container{
-        @apply lg:flex gap-[2rem]
+
+    .toggle__menu span{
+        @apply w-[1.5rem] h-[.15rem] bg-light block transition ease-in-out duration-500
     }
-    .head__nav ul{
-        @apply ml-[5rem] flex transition-all  gap-[2rem];
-    } 
-    .head__nav ul li{
-        @apply my-1;
+
+    .toggle__menu span:nth-child(2){
+        @apply my-[.3rem]
     }
-    .head__nav ul li a{
-        @apply  hover:text-primary lg:text-light  transition-all;
+
+    .toggle__menu.open span:first-child{
+        @apply translate-y-[5px] rotate-[-230deg] transition ease-in-out duration-500;
     }
-    .head__nav i{
-        @apply text-[.8rem] ml-[.5rem];
+
+    .toggle__menu.open span:nth-child(2){
+        @apply opacity-0 transition ease-in-out duration-500;
     }
-      .head__nav ul li:hover .dropdown{
-        @apply lg:overflow-visible lg:top-[15rem] lg:max-h-[45rem] opacity-100 transition-all bg-primary;
+
+    .toggle__menu.open span:last-child{
+        @apply translate-y-[-9px] rotate-[230deg] transition ease-in-out duration-500;
     }
-    .head__nav ul li:first-child{
-        @apply lg:border-primary;
+
+
+    /** ---------- DESKTOP HEADER ---------- */
+
+    .header{
+        @apply hidden lg:block
     }
-    .head__nav ul li a{
-        @apply flex items-center justify-between p-4;
+
+
+    .header2{
+        @apply z-[999] fixed bg-pink-400 p-[.5rem] max-w-[75%] left-[13%] top-[7rem] rounded-[.5rem]
     }
-    .head__nav ul li a i{
-        @apply lg:hidden;
+
+    .header2 .container{
+        @apply py-[2rem]
     }
+
+    .header2__wrapper{
+        @apply grid grid-cols-[2fr_2fr_1fr] gap-x-[1rem] items-center
+    }
+
+    .header2__nav{
+        @apply relative text-light
+    }
+
+    .header2__nav ul{
+        @apply flex gap-x-[1.5rem]
+    }
+
+    .header2__nav ul li a{
+        @apply py-[2rem]
+    }
+
+    .header2__nav ul li ul{
+        @apply bg-primary flex flex-col gap-x-[1rem] absolute lg:hidden top-[3rem] opacity-0
+    }
+
+    .header2__nav ul li:hover ul{
+        @apply max-h-fit p-[1rem] w-[15rem] block opacity-100
+    }
+
+    .header2__nav ul li ul li:not(:first-child){
+        @apply mt-[1rem]
+    }
+
+    .header2__nav ul li ul li ul{
+        @apply absolute top-[0] right-[-15rem] opacity-0
+    }
+
+    .header2__nav ul li:hover ul li ul{
+        @apply max-h-fit p-[1rem] w-[15rem] opacity-100
+    }
+
+    .header2__btn{
+        @apply text-light ml-[2rem]
+    }
+
 
     .banner{
         @apply relative
@@ -232,4 +289,77 @@
     .discover__btn a:last-child:hover{
         @apply bg-primary text-light border-primary transition-all duration-500;
     }
+
+
+
+    /** ---------- FEATURE---------- */
+    .feature{
+        @apply p-[1rem]
+    }
+
+    .feature__wrapper{
+        @apply flex gap-x-[1rem]
+    }
+
+    .feature__card{
+        @apply flex rounded-[1rem] bg-light border-[2px] border-lgreen w-fit hover:shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)] mb-[1rem] mx-[.4rem] max-w-[30rem] min-h-[18rem] transition ease-in-out duration-300
+    }
+
+    .feature__content{
+        @apply flex flex-col items-center text-center justify-center min-h-[18rem]
+    }
+
+    .feature__content img{
+        @apply mb-[1rem]
+    }
+
+    .feature__text a{
+        @apply text-[1.5rem] font-[600] text-dark hover:text-primary transition ease-in-out duration-300
+    }
+
+    .feature__text p{
+        @apply text-[1.1rem] font-[500] text-primary cursor-default
+    }
+
+        /** ---------- PROGRAM BANNER ---------- */
+
+        .news__title{
+            @apply font-[700] text-[1.6rem] text-primary pb-[2rem]
+        }
+    
+        .news__title h4{
+            @apply text-dark w-[25rem]
+        }
+    
+        .news__card{
+            @apply bg-light shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)]
+        }
+    
+        .news__content{
+            @apply px-[.5rem] py-[1rem]
+        }
+    
+        .news__content a{
+            @apply text-[1.3rem] font-[600]
+        }
+    
+        .news__content ul{
+            @apply flex items-center mt-[1rem] mb-[2rem]
+        }
+    
+        .news__content ul li{
+            @apply text-[1.2rem] font-[400] mr-[1rem] text-primary
+        }
+    
+        .news__content ul li i{
+            @apply mr-[.5rem]
+        }
+    
+        .news__content ul li a{
+            @apply text-[1.2rem] font-[400]
+        }
+    
+
+
+
 }

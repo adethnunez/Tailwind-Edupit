@@ -4,10 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primary: '#0EB582',
-        dark:'#323232',
-        light:'#ffffff',
-        dblue:'#18406b',
+        'primary': '#0EB582',
+        'dark': '#2A374C',
+        'light': '#FFFFFF',
+        'dgrey': '#444',
+        'lblue': '#18406b',
+        'lgreen': '#C6F9E9',
+        'grey': '#777777',
+        'dblue': '#4b5981',
       },
 
       screens: {
@@ -19,6 +23,8 @@ module.exports = {
       },
       backgroundImage:{
         'bg__banner': 'url("./img/bg_img.jpg")',
+        'banner-bg': 'url("./img/bg_img.jpg")',
+        'course-bg': 'url("./img/banner1.png")'
       }
     },
   },
