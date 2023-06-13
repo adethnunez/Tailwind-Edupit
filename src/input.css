@@ -359,7 +359,127 @@
             @apply text-[1.2rem] font-[400]
         }
     
+        /*-----------------------middle-footer----------------------*/
+.footer__middle {
+    @apply bg-lblue
+}
+.description__area img{
+    @apply mx-auto mt-[6rem] lg:pt-[1.8rem] bg-lblue
+}
+.description__area p{
+    @apply pb-[1rem] text-[1.2rem] 
+}
+.middle__row{
+    @apply text-center text-white
+    lg:grid lg:grid-cols-4
+}
+.social-icons i{
+    @apply border-[1px] border-white p-[.5rem] rounded hover:bg-primary transition-all
+}
+.nav_menu1 h2{
+    @apply text-[1.5rem] font-bold pt-[2rem] pb-[1.5rem]
+}
+.menu__container ul li a{
+    @apply text-[1.2rem]
+}
+.menu__container ul li {
+    @apply pb-[1rem] hover:text-primary transition-all
+}
+.custom__html h2{
+    @apply text-[1.5rem] pt-[1.5rem] pb-[1rem]
+    lg:pt-[2rem]
+}
+.witr_sub_table{
+    @apply flex justify-between text-[1.2rem] pb-[8px] border-b-[1px] mb-[8px]
+}
+
+/*-----------------------footer----------------------*/
+.footer-bottom{
+    @apply relative bg-lblue text-white pt-[3rem]
+}
+.copy-right-text{
+    @apply flex justify-center pb-[1rem] pt-[1rem] text-[1rem]
+}
+.text-right{
+    @apply flex justify-center  gap-[1rem] 
+    
+}
+.text-right li{
+    @apply  hover:text-primary transition-all text-[1rem]
+}
+.row{
+    @apply border-t-[1px]
+lg:flex lg:justify-between lg:items-center
+}
+/*-----------------------PROGRAM----------------------*/
+.prog{
+    @apply my-[3rem]
+}
+.prog__title{
+    @apply text-center font-bold lg:m-auto lg:w-[40rem]
+}
+.prog__title h2{
+    @apply text-primary text-[1.5rem] lg:text-[1rem]
+}
+.prog__title h3{
+    @apply text-dark text-[1.6rem] lg:text-[2.5rem]
+}
+.prog__group{
+    @apply lg:grid lg:grid-cols-4 gap-[2rem]
+}
+.prog__card{
+    @apply mt-[2rem] py-[3.5rem] bg-light border-[2px] rounded-[.5rem] border-green-200 drop-shadow-xl 
+}
+/* .prog__card:not(:first-child){
+    @apply mt-[1.5rem]
+} */
+.prog__card:hover{
+    @apply border-light 
+}
+.prog__content{
+    @apply flex flex-col items-center 
+}
+.prog__content a{
+    @apply text-[1.5rem] text-dark hover:text-primary font-[600] my-[.5rem] transition ease-in-out duration-300 
+}
+
+.prog__content p{
+    @apply text-[1.1rem] text-grey
+}
+/*-----------------------Testimonial----------------------*/
+.testimonial{
+    @apply bg-[#f7fdfb] py-[4rem] relative
+}
+.testimonial__text {
+    @apply text-center py-[2rem] font-bold
+}
+.testimonial__text h4 {
+    @apply text-primary text-[1.8rem]
+}
+.testimonial__text h2{
+    @apply text-[1.6rem] 
+}
+.test__item ul{
+    @apply flex text-primary text-[1.5rem] gap-[.5rem]
+}
+.test__item p {
+    @apply text-[#9fa0a0] text-[1.2rem] mt-[1rem] mb-[1rem]
+}
 
 
 
+
+/*-----------------------chevron Scroll----------------------*/
+#myBtn{
+    @apply fixed flex-none bottom-[75px] right-[25px] z-[99] text-[1rem] border-none bg-primary text-light cursor-pointer p-[10px] border-r-[4px] 
+}
+#myBtn i{
+    @apply text-[1rem] text-center
+}
+#myBtn:hover{
+    @apply  transition-all duration-300
+}
+html {
+    scroll-behavior: smooth
+  }
 }
