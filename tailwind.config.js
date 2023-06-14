@@ -25,6 +25,9 @@ module.exports = {
         'bg__banner': 'url("./img/bg_img.jpg")',
         'banner-bg': 'url("./img/bg_img.jpg")',
         'course-bg': 'url("./img/banner1.png")'
+      },
+      fontFamily: {
+        'Raleway' :['Raleway', 'sans-serif']
       }
     },
   },

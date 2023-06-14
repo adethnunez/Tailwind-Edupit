@@ -636,7 +636,7 @@ video {
   gap: 2rem;
 }
 
-/** ---------- MOBILE HEADER ---------- */
+/** ---------- HEADER ---------- */
 
 @media (min-width: 1024px) {
   .header-mob {
@@ -1509,12 +1509,16 @@ video {
   margin-left: auto;
   margin-right: auto;
   margin-top: 6rem;
+  display: flex;
   --tw-bg-opacity: 1;
   background-color: rgb(24 64 107 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 1024px) {
   .description__area img {
+    margin-top: 0px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 64 107 / var(--tw-bg-opacity));
     padding-top: 1.8rem;
   }
 }
@@ -1758,8 +1762,8 @@ video {
 
 .testimonial {
   position: relative;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .testimonial-text {
@@ -2170,27 +2174,41 @@ html {
 }
 
 .testimonial .tns-controls button {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  min-width: 3rem;
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(14 181 130 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
-  padding-left: .8rem;
-  padding-right: .8rem;
+  font-size: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.testimonial .tns-controls button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(42 55 76 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .testimonial .tns-controls {
   position: absolute;
-  bottom: 1rem;
-  left: 62rem;
+  bottom: 0px;
+  left: 72rem;
   right: 51rem;
   z-index: 10;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  max-width: 55rem;
+  max-width: 5rem;
+  --tw-translate-x: -10rem;
+  --tw-translate-y: 7rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   align-items: center;
   justify-content: space-between;
 }

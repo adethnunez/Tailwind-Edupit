@@ -54,11 +54,11 @@
 	@apply absolute top-[50%] right-0 left-0 mx-auto flex items-center justify-between max-w-[55rem] z-10;
 }
 .testimonial .tns-controls button {
-	@apply bg-primary text-light py-[.5rem] px-[.8rem] rounded-full;
+	@apply mb-[3rem] mt-[2rem] hover:bg-dark hover:text-light min-w-[3rem] bg-primary rounded-full px-[1rem] py-[.5rem] text-light text-[1.5rem]
 }
 
 .testimonial .tns-controls {
-	@apply absolute bottom-[1rem] left-[62rem] right-[51rem] mx-auto flex items-center justify-between max-w-[55rem] z-10;
+	@apply translate-x-[-10rem] translate-y-28 absolute bottom-0 left-[72rem] right-[51rem] mx-auto flex items-center justify-between max-w-[5rem] z-10;
 }
 
 @layer utilities{
@@ -117,7 +117,7 @@
         @apply gap-[2rem] 
     }
 
-     /** ---------- MOBILE HEADER ---------- */
+     /** ---------- HEADER ---------- */
 
      .header-mob{
         @apply lg:hidden
@@ -459,7 +459,7 @@
     @apply bg-lblue
 }
 .description__area img{
-    @apply mx-auto mt-[6rem] lg:pt-[1.8rem] bg-lblue
+    @apply  lg:mt-0 flex mx-auto mt-[6rem] lg:pt-[1.8rem] bg-lblue lg:bg-lblue
 }
 .description__area p{
     @apply pb-[1rem] text-[1.2rem] 
@@ -543,7 +543,7 @@ lg:flex lg:justify-between lg:items-center
 }
 /*-----------------------Testimonial----------------------*/
 .testimonial{
-    @apply relative py-[2rem];
+    @apply relative py-[4rem];
 }
 
 .testimonial-text{
