@@ -35,6 +35,31 @@
 .tns-nav .tns-nav-active{
     @apply bg-primary transition-all;
 }
+.instructor .tns-controls{
+    @apply absolute top-[20%] left-[80%] right-[15%] mx-auto
+}
+
+.instructor .tns-controls button{
+    @apply hover:bg-dark hover:text-light min-w-[3rem] bg-primary rounded-full px-[1rem] py-[.5rem] text-light text-[1.5rem]
+}
+.testimonial .tns-outer {
+	@apply mx-[2rem];
+}
+
+.feature .tns-controls button {
+	@apply bg-primary text-light py-[.5rem] px-[.8rem] rounded-full;
+}
+
+.feature .tns-controls {
+	@apply absolute top-[50%] right-0 left-0 mx-auto flex items-center justify-between max-w-[55rem] z-10;
+}
+.testimonial .tns-controls button {
+	@apply bg-primary text-light py-[.5rem] px-[.8rem] rounded-full;
+}
+
+.testimonial .tns-controls {
+	@apply absolute bottom-[1rem] left-[62rem] right-[51rem] mx-auto flex items-center justify-between max-w-[55rem] z-10;
+}
 
 @layer utilities{
     .btn{
@@ -320,6 +345,76 @@
     .feature__text p{
         @apply text-[1.1rem] font-[500] text-primary cursor-default
     }
+    /** ---------- INSTRUCTOR BANNER ---------- */
+
+    .instructor{
+        @apply relative py-[1rem]
+    }
+
+    .instructor__title{
+        @apply font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
+    }
+
+    .instructor__title h4{
+        @apply text-dark w-[17rem] lg:text-[3rem] lg:w-[30rem]
+    }
+
+    .instructor__wrapper{
+        @apply flex gap-x-[2rem]
+    }
+
+    .instructor__card{
+        @apply text-center bg-light border-[2px] border-lgreen rounded-[.5rem] py-[3rem] shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] overflow-hidden mb-[.5rem] px-[.5rem]
+    }
+
+    .instructor__card:hover{
+        @apply  border-light transition ease-in-out duration-300
+    }
+
+    .instructor__card:hover .instructor__social:before{
+        @apply w-[100%] bg-primary transition-all duration-300
+    }
+
+    .instructor__content{
+        @apply mb-[1rem] flex flex-col items-center
+    }
+
+    .instructor__content h3{
+        @apply text-[1.5rem] font-[600] text-dark pt-[.5rem]
+    }
+
+    .instructor__content p{
+        @apply text-[1.1rem] text-grey
+    }
+
+    .instructor__social{
+        @apply relative flex justify-center
+    }
+
+    .instructor__social:before{
+        @apply absolute content-[''] bg-[#ddd] top-0 h-[1px] w-[25%] m-auto transition-all duration-300
+    }
+
+    .instructor__social ul{
+        @apply flex pt-[1.5rem]
+    }
+
+    .instructor__social ul li:nth-child(2){
+        @apply mx-[.5rem]
+    }
+
+    .instructor__social ul li:first-child a{
+        @apply px-[.8rem]
+    }
+
+    .instructor__social ul li a{
+        @apply bg-lgreen px-[.7rem] py-[.5rem] text-primary text-[1rem] rounded-[.2rem]
+    }
+
+    .instructor__social ul li a:hover{
+        @apply text-light bg-primary transition ease-in-out duration-300
+    }
+
 
         /** ---------- PROGRAM BANNER ---------- */
 
@@ -448,24 +543,60 @@ lg:flex lg:justify-between lg:items-center
 }
 /*-----------------------Testimonial----------------------*/
 .testimonial{
-    @apply bg-[#f7fdfb] py-[4rem] relative
-}
-.testimonial__text {
-    @apply text-center py-[2rem] font-bold
-}
-.testimonial__text h4 {
-    @apply text-primary text-[1.8rem]
-}
-.testimonial__text h2{
-    @apply text-[1.6rem] 
-}
-.test__item ul{
-    @apply flex text-primary text-[1.5rem] gap-[.5rem]
-}
-.test__item p {
-    @apply text-[#9fa0a0] text-[1.2rem] mt-[1rem] mb-[1rem]
+    @apply relative py-[2rem];
 }
 
+.testimonial-text{
+    @apply mt-[2rem];
+}
+.testimonial-text h4{
+    @apply text-primary text-center text-[1.7rem] font-bold;
+}
+.testimonial-text h2{
+    @apply text-dark text-center text-[1.6rem] font-bold;
+}
+.testimonial-item ul{
+    @apply flex gap-[.3rem] text-primary mb-[1rem];
+}
+.testimonial-item ul li{
+    @apply text-[1.2rem];
+}
+.testimonial-item p{
+    @apply text-[1.4rem] text-gray-500 font-medium;
+}
+.testimonial-name{
+    @apply flex items-center gap-[.8rem] mt-[1rem];
+}
+.testimonial-name img{
+    @apply w-[3.5rem]
+}
+.testimonial-position h3{
+    @apply text-dark text-[1.1rem] font-bold;
+}
+.testimonial-position p{
+    @apply text-primary text-[.9rem]
+}
+.testimonial-slider{
+    @apply mt-[2rem]
+}
+
+@media (min-width:1080px){
+    .testomonial__wrapper{
+        @apply grid grid-cols-2;
+    }
+    .testimonial-img img{
+        @apply w-[30rem];
+    }
+    .testimonial-text{
+        @apply mt-0;
+    }
+    .testimonial-text h4{
+        @apply text-[1rem];
+    }
+    .testimonial-text h2{
+        @apply text-[2.7rem] leading-[1.2] w-[35rem] mx-auto;
+    }
+}
 
 
 
