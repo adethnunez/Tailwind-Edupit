@@ -381,63 +381,65 @@
    <section class="feature">
     <div class="container">
         <div class="feature__wrapper">
-            <div class="feature__card">
-                <div class="feature__content">
-                    <img src="./img/graduateT.png" alt="">
-                    <div class="feature__text">
-                        <a href="">Non-Resident</a>
-                        <p>Student(100)</p>
+
+            <!-- 1ST ITEM -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <div class="feature-img">
+                        <img src="./img/graduateT.png" alt="">
                     </div>
+                    <h3>Graduate Teacher</h3>
+                    <p>Student (40)</p>
                 </div>
             </div>
-            <div class="feature__card">
-                <div class="feature__content">
-                    <img src="./img/residential.png" alt="">
-                    <div class="feature__text">
-                        <a href="">Non-Resident</a>
-                        <p>Student(100)</p>
+
+            <!-- 2ND ITEM -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <div class="feature-img">
+                        <img src="./img/non-res.png" alt="">
                     </div>
+                    <h3>Non-resident</h3>
+                    <p>Student (100)</p>
                 </div>
             </div>
-            <div class="feature__card">
-                <div class="feature__content">
-                    <img src="./img/non-res.png" alt="">
-                    <div class="feature__text">
-                        <a href="">Non-Resident</a>
-                        <p>Student (100)</p>
+
+            <!-- 3RD ITEM -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <div class="feature-img">
+                        <img src="./img/tuition.png" alt="">
                     </div>
+                    <h3>Tuition is free</h3>
+                    <p>Student (15)</p>
                 </div>
             </div>
-            <div class="feature__card">
-                <div class="feature__content">
-                    <img src="./img/tuition.png" alt="">
-                    <div class="feature__text">
-                        <a href="">Non-Resident</a>
-                        <p>Student(100)</p>
+
+            <!-- 1ST ITEM -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <div class="feature-img">
+                        <img src="./img/graduateT.png" alt="">
                     </div>
+                    <h3>Graduate Teacher</h3>
+                    <p>Student (40)</p>
                 </div>
             </div>
-            <div class="feature__card">
-                <div class="feature__content">
-                    <img src="./edupit-img/feature-img5.png" alt="">
-                    <div class="feature__text">
-                        <a href="">Non-Resident</a>
-                        <p>Student(100)</p>
+
+            <!-- 4TH ITEM -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <div class="feature-img">
+                        <img src="./img/residential.png" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="feature__card">
-                <div class="feature__content">
-                    <img src="./edupit-img/feature-img4.png" alt="">
-                    <div class="feature__text">
-                        <a href="">Non-Resident</a>
-                        <p>Student(100)</p>
-                    </div>
+                    <h3>Residential</h3>
+                    <p>Student (500)</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <section class="instructor">
     <div class="container">
@@ -801,13 +803,26 @@
           mouseDrag:true,
         });
         var slider = tns({
-          container: '.feature__wrapper',
-          items: 1,
-          slideBy: 'page',
-          autoplay: true,
-          controls: false,
-          nav: true,
-          autoplayButtonOutput: false,
+            container: '.feature__wrapper', 
+            items: 1,
+            slideBy: 'page',
+            autoplay: true,
+            axis: 'horizontal',
+            controls: false,
+            nav: true,
+            navPosition: 'bottom',
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            responsive: {
+                1024:{
+                items: 4,
+                nav: false,
+                autoplay: false,
+                controls: true,
+                controlsText:['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'],
+                slideBy: 1
+                }
+            }
         });
         var slider = tns({
           container: '.instructor__wrapper',

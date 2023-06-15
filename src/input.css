@@ -319,31 +319,39 @@
 
     /** ---------- FEATURE---------- */
     .feature{
-        @apply p-[1rem]
+        @apply pt-[1.5rem] relative;
     }
 
     .feature__wrapper{
-        @apply flex gap-x-[1rem]
+        @apply flex items-center gap-[1.5rem];
     }
 
-    .feature__card{
-        @apply flex rounded-[1rem] bg-light border-[2px] border-lgreen w-fit hover:shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)] mb-[1rem] mx-[.4rem] max-w-[30rem] min-h-[18rem] transition ease-in-out duration-300
+    .feature-item {
+        @apply flex bg-light justify-center border-solid border-[1px] border-primary w-[20rem] h-fit py-[1.5rem] rounded-[5px];
     }
 
-    .feature__content{
-        @apply flex flex-col items-center text-center justify-center min-h-[18rem]
+    .feature-img{
+        @apply flex justify-center;
     }
 
-    .feature__content img{
-        @apply mb-[1rem]
+    .feature-content h3{
+        @apply text-dark text-[1.2rem] font-bold text-center py-[.1rem];
     }
 
-    .feature__text a{
-        @apply text-[1.5rem] font-[600] text-dark hover:text-primary transition ease-in-out duration-300
+    .feature-content p{
+        @apply text-primary text-center
     }
 
-    .feature__text p{
-        @apply text-[1.1rem] font-[500] text-primary cursor-default
+    @media (min-width:1080px){
+        .feature .container{
+            @apply max-w-[60rem]
+        }
+
+        .feature-item{
+            @apply flex justify-center w-[50rem];
+        }
+    
+        
     }
     /** ---------- INSTRUCTOR BANNER ---------- */
 
