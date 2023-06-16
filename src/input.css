@@ -5,12 +5,23 @@
 .container{
     @apply mx-auto p-[1.5rem] w-full max-w-[140rem] lg:max-w-[90rem];
 }
-.banner button {
-@apply sm:hidden
+body{
+    @apply font-Raleway
 }
-.banner .tns-nav{
-    @apply absolute right-3 top-[45%] z-40 flex flex-col lg:top-[50%] lg:right-[20rem];
+
+.bg-clip-text {
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: 3px;
 }
+
+.banner .tns-controls{
+    @apply absolute top-[50%] left-0 right-0 max-w-[120rem] z-[10] mx-auto flex justify-between
+}
+
+.banner .tns-controls button{
+    @apply bg-primary p-[.8rem] rounded-full text-[1.5rem] flex items-center text-light
+}
+
 .tns-controls{
     @apply absolute top-[50%] right-0 left-0 mx-[2rem] flex items-center justify-between max-w-[106rem] z-10;
 }
@@ -46,12 +57,16 @@
 	@apply mx-[2rem];
 }
 
-.feature .tns-controls button {
-	@apply bg-primary text-light py-[.5rem] px-[.8rem] rounded-full;
+.feature .tns-controls{
+    @apply absolute top-[50%] right-0 left-0 flex items-center justify-between z-[10]  mx-auto
 }
 
-.feature .tns-controls {
-	@apply absolute top-[50%] right-0 left-0 mx-auto flex items-center justify-between max-w-[55rem] z-10;
+.feature .tns-controls button{
+    @apply text-[1.5rem] text-light bg-primary rounded-full px-[1.2rem] py-[.7rem] max-w-[100rem]
+}
+
+.feature .tns-outer{
+    @apply lg:translate-y-[-12rem]
 }
 .testimonial .tns-controls button {
 	@apply mb-[3rem] mt-[2rem] hover:bg-dark hover:text-light min-w-[3rem] bg-primary rounded-full px-[1rem] py-[.5rem] text-light text-[1.5rem]
@@ -60,6 +75,17 @@
 .testimonial .tns-controls {
 	@apply translate-x-[-10rem] translate-y-28 absolute bottom-0 left-[72rem] right-[51rem] mx-auto flex items-center justify-between max-w-[5rem] z-10;
 }
+.news .tns-controls{
+    @apply absolute top-[15%] right-[15%] max-w-[4rem] left-0 ml-auto flex justify-between
+}
+
+.news .tns-controls button{
+    @apply hover:bg-dark hover:text-light bg-primary rounded-full px-[.7rem] py-[.6rem] text-light text-[1.5rem] flex items-center
+}
+.news .tns-controls .data-controls{
+    @apply hidden
+}
+
 
 @layer utilities{
     .btn{
@@ -315,11 +341,55 @@
         @apply bg-primary text-light border-primary transition-all duration-500;
     }
 
+/** ---------- BANNER ---------- */
 
+.banner .container{
+    @apply max-w-[100rem];
+}
+
+.banner__item{
+    @apply pt-[8rem] bg-banner-bg bg-no-repeat bg-cover min-h-[80vh] lg:min-h-[100vh] lg:pt-[15rem] lg:flex lg:items-center
+}
+
+.banner__content{
+    @apply lg:flex lg:flex-row lg:items-center lg:justify-between
+}
+
+.banner__img{
+    @apply hidden lg:block
+}
+
+.banner__img img{
+    @apply w-[30rem]
+}
+
+.banner__text{
+    @apply relative
+}
+
+.banner__text h2{
+    @apply text-light text-[2rem] font-[600] text-center px-[2rem] lg:text-[4rem] lg:text-left lg:px-0 lg:w-[50rem]
+}
+
+.banner__text p{
+    @apply text-light font-medium text-[1.5rem] px-[1rem] text-center mt-[1rem] lg:px-0 lg:text-[1.5rem] lg:text-left lg:w-[45rem]
+}
+
+.banner__text p span{
+    @apply block lg:flex
+}
+
+.banner__btn{
+    @apply flex justify-center items-center gap-x-[.5rem] mt-[3rem] text-light lg:justify-start
+}
+
+.banner__bg-text{
+    @apply absolute bg-clip-text text-gray-300 text-[3.5rem] left-0 top-[-2rem] opacity-[.07] lg:text-[7rem]
+}
 
     /** ---------- FEATURE---------- */
     .feature{
-        @apply p-[1rem]
+        @apply relative p-[1rem] max-w-[80rem] mx-auto lg:max-h-[15rem]
     }
 
     .feature__wrapper{
@@ -327,11 +397,11 @@
     }
 
     .feature__card{
-        @apply flex rounded-[1rem] bg-light border-[2px] border-lgreen w-fit hover:shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)] mb-[1rem] mx-[.4rem] max-w-[30rem] min-h-[18rem] transition ease-in-out duration-300
+        @apply flex rounded-[1rem] bg-light border-[2px] border-lgreen w-fit hover:shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)] mb-[1rem] mx-auto max-w-[45rem] min-h-[18rem] transition ease-in-out duration-300 lg:max-w-[15rem] lg:min-h-[15rem]
     }
 
     .feature__content{
-        @apply flex flex-col items-center text-center justify-center min-h-[18rem]
+        @apply flex flex-col items-center text-center justify-center min-h-[18rem] lg:min-h-[15rem]
     }
 
     .feature__content img{
@@ -345,6 +415,72 @@
     .feature__text p{
         @apply text-[1.1rem] font-[500] text-primary cursor-default
     }
+     /** ---------- ABOUT BANNER ---------- */
+
+     .expert{
+        @apply py-[2rem] 
+    }
+
+    .expert .container{
+        @apply max-w-[100rem] mx-auto
+    }
+
+    .expert__wrapper{
+        @apply lg:flex lg:gap-x-[5rem]
+    }
+
+    .expert__title{
+        @apply my-[2rem]
+    }
+
+    .expert__title h3{
+        @apply text-[1.5rem] text-primary font-[800] lg:text-[1rem]
+    }
+
+    .expert__title h4{
+        @apply text-[1.5rem] text-dark font-[800] lg:text-[3rem]
+    }
+
+    .expert__title p{
+        @apply text-grey text-[1.2rem]
+    }
+
+    .expert__text{
+        @apply my-[1.5rem] border-l-[3px] border-primary pl-[.5rem] pb-[1rem] text-grey
+    }
+
+    .expert__text h5{
+        @apply text-[1.3rem]
+    }
+
+    .expert__img img{
+        @apply lg:w-[70vw]
+    }
+
+    .expert__slider h4{
+        @apply text-[1.5rem] font-[700] mb-[1rem] text-dark lg:text-[1.7rem]
+    }
+
+    .expert__circle{
+        @apply relative h-[3px] w-[90px] bg-primary rounded-[30px]
+    }
+
+    .expert__circle:before{
+        @apply content-[''] absolute left-0 top-[50%] translate-y-[-50%] border-[6px] border-primary rounded-full animate-sliding1
+    }
+
+    .expert__circle:after{
+        @apply content-[''] absolute right-0 top-[50%] translate-y-[-50%] border-[6px] border-primary rounded-full animate-sliding2
+    }
+
+    .expert__slider-wrapper{
+        @apply flex items-center justify-between gap-x-[1rem] mt-[2rem] mx-auto
+    }
+
+    .expert__slider-wrapper img{
+        @apply max-w-[4rem] mx-auto
+    }
+
     /** ---------- INSTRUCTOR BANNER ---------- */
 
     .instructor{
@@ -416,26 +552,74 @@
     }
 
 
-        /** ---------- PROGRAM BANNER ---------- */
+        /** ---------- NEWS ---------- */
 
+        .news{
+            @apply relative pb-[5rem]
+        }
+    
         .news__title{
-            @apply font-[700] text-[1.6rem] text-primary pb-[2rem]
+            @apply font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
         }
     
         .news__title h4{
-            @apply text-dark w-[25rem]
+            @apply text-dark w-[25rem] lg:text-[3rem] lg:w-[50rem]
+        }
+    
+        .news__wrapper{
+            @apply lg:flex lg:gap-x-[2rem]
         }
     
         .news__card{
-            @apply bg-light shadow-[0px_0px_50px_0px_rgba(0,0,0,.09)]
+            @apply overflow-hidden bg-light shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] mb-[1rem] px-[.5rem] min-h-[10rem] lg:px-0
+        }
+    
+        .news__card:hover .news__subtitle{
+            @apply transition ease-in duration-300 
+        }
+    
+        .news__card:hover .news__subtitle span{
+            @apply top-0 left-0 w-full h-full transition-all duration-500
+        }
+    
+        .news__card:hover .news__subtitle p{
+            @apply left-[2%] p-[.5rem] text-[1.1rem] transition-all duration-500
+        }
+    
+        .news__card:hover .news__img img{
+            @apply scale-[1.1] transition ease-in-out duration-500
+        }
+    
+        .news__img{
+            @apply relative
+        }
+    
+        .news__subtitle{
+            @apply transition ease-in duration-300
+        }
+    
+        .news__subtitle span{
+            @apply absolute top-[50%] left-[50%] bg-black bg-opacity-50 w-0 h-0 transition-all duration-500
+        }
+    
+        .news__subtitle p{
+            @apply absolute top-[2%] left-[10%] bg-primary text-light rounded-[.2rem] font-[600] m-[1rem] text-[0] transition-all duration-500
+        }
+    
+        .news__img{
+            @apply overflow-hidden 
+        }
+    
+        .news__img img{
+            @apply w-full lg:w-full transition ease-in-out duration-500
         }
     
         .news__content{
-            @apply px-[.5rem] py-[1rem]
+            @apply px-[1rem] py-[2rem]
         }
     
         .news__content a{
-            @apply text-[1.3rem] font-[600]
+            @apply text-[1.3rem] text-dark font-[600] hover:text-primary transition ease-in-out duration-300 lg:w-[10rem] lg:text-[1.6rem] lg:pr-[3rem]
         }
     
         .news__content ul{
@@ -443,7 +627,7 @@
         }
     
         .news__content ul li{
-            @apply text-[1.2rem] font-[400] mr-[1rem] text-primary
+            @apply text-[1.1rem] font-[500] mr-[1rem] text-primary
         }
     
         .news__content ul li i{
@@ -451,8 +635,14 @@
         }
     
         .news__content ul li a{
-            @apply text-[1.2rem] font-[400]
+            @apply text-[1.1rem] text-primary font-[500]
         }
+    
+        .news__content .shallow-white{
+            @apply text-[1.1rem] font-[500] hover:text-light w-fit lg:pr-[1.5rem]
+        }
+    
+    
     
         /*-----------------------middle-footer----------------------*/
 .footer__middle {
