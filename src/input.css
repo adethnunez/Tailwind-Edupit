@@ -89,7 +89,13 @@ body{
 
 @layer utilities{
     .btn{
-        @apply inline-block py-[.8rem] px-[1.5rem] border-transparent
+        @apply p-3 rounded-md;
+    }
+    .btn.green{
+        @apply bg-[hsl(161.68,85.64%,38.24%)] text-white font-semibold hover:bg-[#444] transition-all duration-500;
+    }
+    .btn.green-outline{
+        @apply border-[.1rem] font-semibold border-[hsl(161.68,85.64%,38.24%)] text-[hsl(161.68,85.64%,38.24%)] hover:bg-[hsl(161.68,85.64%,38.24%)] hover:text-white transition-all duration-500;
     }
 
     .green{
@@ -102,6 +108,7 @@ body{
     .shallow-white{
         @apply text-[1.2rem] bg-transparent border-[1px] border-grey rounded-[.3rem] text-dark hover:text-light hover:bg-primary hover:border-primary transition ease-in-out duration-300
     }
+
 }
 
 @layer components{
@@ -144,162 +151,119 @@ body{
     }
 
      /** ---------- HEADER ---------- */
-
-     .header-mob{
-        @apply lg:hidden
+     .header__wrapper:last-child{
+        @apply lg:fixed lg:w-full lg:top-[5rem] z-50 transition-all duration-500;
     }
-
-    .branding{
-        @apply bg-light flex justify-center py-[1rem]
+    .header__wrapper:last-child.top{
+        @apply lg:top-0 transition-all duration-500;
     }
-
-    .header-mob__wrapper{
-        @apply relative bg-primary
+    .header__brand{
+        @apply hidden lg:block lg:py-2;
     }
-
-    .header-mob__content{
-        @apply flex items-center justify-between
+    .header__quate{
+        @apply hidden lg:inline-block w-[11rem] text-[1.2rem] mx-auto;
     }
-
-    .header-mob__text{
-        @apply text-light text-[1.2rem] font-[600]
+    .header__container{
+        @apply flex flex-col items-center justify-between lg:flex-row lg:bg-[hsl(211.08,63.36%,25.69%)] lg:p-[1.5rem] lg:rounded-md lg:w-full lg:max-w-[80rem] lg:mx-auto;
     }
-
-    .header__nav{
-        @apply max-h-0 overflow-hidden bg-light lg:bg-transparent absolute flex flex-col  left-0 w-[100%] top-[9rem] text-center lg:relative lg:overflow-visible lg:h-[100%] lg:flex-row-reverse lg:items-center lg:justify-between lg:w-full lg:max-w-[70rem] lg:mx-auto lg:left-0  transition-[.5s] z-[999] ;
-    }-[0]
-    .header__nav ul{
-        @apply lg:flex transition-all ;
+    .header__wrapper h6{
+        @apply bg-[hsl(161.68,85.64%,38.24%)] lg:hidden w-full lg:w-fit px-4 py-2 relative text-white font-bold text-[1.5rem] lg:bg-transparent; 
     }
-    .header__nav ul li{
-        @apply  my-1 lg:my-0 lg:border-t-4 lg:border-transparent lg:hover:border-primary transition-all;
+    .header__wrapper ul{
+        @apply bg-white w-full h-0 overflow-hidden lg:overflow-visible transition-all left-0 top-[3.2rem] lg:bg-transparent lg:h-fit lg:flex lg:items-center lg:justify-center;
     }
-    .header__nav ul li a{
-        @apply text-[.9rem] lg:text-white  transition-all border-b-2 border-gray-400;
+    .header__wrapper ul.open{
+        @apply h-full transition-all lg:h-fit;
     }
-    
-    .header__nav ul li a{
-        @apply lg:hover:bg-slate-600;
+    .header__wrapper ul li{
+        @apply py-3 text-[#444] lg:text-white font-semibold border-t-2 relative lg:border-0;
     }
-    .header__nav ul li:hover .dropdown{
-        @apply lg:overflow-visible lg:top-[3.8rem] lg:max-h-[40rem] opacity-100 transition-all;
+    .header__wrapper ul li a{
+        @apply pl-4 flex items-center;
     }
-    .header__nav ul li:first-child{
-        @apply lg:border-primary;
+    .header__wrapper ul li a span::before{
+        @apply content-[""] absolute block bg-[#444] w-4 h-1 right-[1rem] transition-all duration-500 lg:hidden;
     }
-    .header__nav ul li a{
-        @apply flex items-center justify-between p-3;
+    .header__wrapper ul li a span::after{
+        @apply content-[""] absolute block bg-[#444] w-1 h-4 right-[1.4rem] -translate-y-[.38rem] transition-all duration-500 lg:hidden;
     }
-    .header__nav ul li a i{
-        @apply lg:hidden;
+    .header__wrapper ul li a.open span::after{
+        @apply hidden transition-all duration-500;
     }
-      .header__nav i{
-        @apply transition ease-linear duration-300;
-    }
-    
-
-    .header__nav.open{
-        @apply duration-500 top-[12rem] max-h-fit left-0 transition-all lg:top-0;
+    .header__wrapper ul li a i{
+        @apply px-2 hidden lg:block;
     }
     .dropdown{
-        @apply max-h-0 bg-white overflow-hidden transition-all lg:absolute lg:top-[6rem] lg:overflow-hidden lg:opacity-0 lg:max-h-0 lg:text-dark lg:flex duration-500 z-[999];
+        @apply z-10 h-full max-h-0 overflow-hidden transition-all lg:absolute lg:translate-y-10 lg:opacity-0 lg:top-[3rem] lg:left-0;
     }
-    .dropdown ul{
-        @apply flex-col m-3;
-    }
-    .dropdown ul li a{
-        @apply h-[1rem] lg:text-dark lg:hover:bg-transparent lg:translate-x-1 lg:hover:translate-x-0 lg:hover:text-dark lg:border-transparent lg:border-l-4 lg:hover:border-primary;
+    .header__wrapper ul li:hover .dropdown{
+        @apply lg:overflow-visible lg:max-h-[20rem] lg:opacity-100 lg:translate-y-0 transition-all;
     }
     .dropdown.open{
-        @apply max-h-full transition-all lg:hidden;
+        @apply max-h-[50rem] transition-all duration-500;
     }
-    .header__nav__icons{
-        @apply  p-5 border-b-2 w-full mb-5 lg:flex lg:p-0 lg:mb-0 lg:border-0 lg:gap-3 lg:mr-5 lg:w-[unset];
+    .dropdown ul{
+        @apply flex flex-col top-0 mt-3 lg:m-0 h-full lg:h-fit lg:bg-[hsl(161.68,85.64%,38.24%)] transition-all duration-500;
     }
-    .header__nav__icons a{
-        @apply text-[1.5rem] hover:text-primary lg:text-white transition-all duration-500 mx-1;
+    .dropdown ul li{
+        @apply font-normal lg:w-[15rem] lg:hover:bg-white lg:hover:text-primary transition-all relative duration-500;
     }
-
-    .toggle__menu.open span{
-        @apply z-10 bg-light
+    .dropdown ul li a{
+        @apply hover:text-[hsl(161.68,85.64%,38.24%)] transition-all ml-[2rem] lg:m-0;
     }
-
+    .dropdown ul li a::before{
+        @apply hidden;
+    }
+    .dropdown ul li a::after{
+        @apply hidden;
+    }
+    .dropdown ul li:hover .dropdown.children ul{
+        @apply lg:opacity-100 lg:top-[-2rem] transition-all duration-500;
+    }
+    .dropdown ul li:hover .dropdown.children-portfolio ul{
+        @apply lg:opacity-0 transition-all duration-500;
+    }
+    .dropdown.children ul{
+        @apply lg:opacity-0 lg:m-0 lg:absolute lg:left-[15rem] lg:w-fit lg:top-[2rem] transition-all duration-500;
+    }
+    .dropdown.children ul li{
+        @apply relative transition-all;
+    }
+    .dropdown.children ul li a{
+        @apply px-[2rem] transition-all;
+    }
+    .dropdown.children-portfolio ul{
+        @apply lg:opacity-0 lg:invisible lg:absolute lg:py-[1rem] lg:left-[-15rem] lg:max-h-fit lg:w-fit lg:top-0 lg:translate-y-5 transition-all duration-500;
+    }
+    .dropdown.children ul li:hover .dropdown.children-portfolio ul{
+        @apply lg:opacity-100 lg:visible lg:-translate-y-2 transition-all duration-500;
+    }
+    .dropdown.children-portfolio ul li a{
+        @apply px-[4rem] lg:px-[1rem] w-[20rem] transition-all;
+    }
+    .toggle__menu{
+        @apply absolute right-5 top-[35%] lg:hidden;
+    }
     .toggle__menu span{
-        @apply w-[1.5rem] h-[.15rem] bg-light block transition ease-in-out duration-500
+        @apply block bg-white h-[.2rem] w-[2rem] rounded-full;
     }
-
     .toggle__menu span:nth-child(2){
-        @apply my-[.3rem]
+        @apply my-1;
     }
-
     .toggle__menu.open span:first-child{
-        @apply translate-y-[5px] rotate-[-230deg] transition ease-in-out duration-500;
+        @apply rotate-[45deg] translate-y-2;
     }
-
     .toggle__menu.open span:nth-child(2){
-        @apply opacity-0 transition ease-in-out duration-500;
+        @apply opacity-0 transition-all;
     }
-
     .toggle__menu.open span:last-child{
-        @apply translate-y-[-9px] rotate-[230deg] transition ease-in-out duration-500;
+        @apply rotate-[-45deg] -translate-y-2;
     }
 
 
-    /** ---------- DESKTOP HEADER ---------- */
-
-    .header{
-        @apply hidden lg:block
-    }
 
 
-    .header2{
-        @apply z-[999] fixed bg-pink-400 p-[.5rem] max-w-[75%] left-[13%] top-[7rem] rounded-[.5rem]
-    }
-
-    .header2 .container{
-        @apply py-[2rem]
-    }
-
-    .header2__wrapper{
-        @apply grid grid-cols-[2fr_2fr_1fr] gap-x-[1rem] items-center
-    }
-
-    .header2__nav{
-        @apply relative text-light
-    }
-
-    .header2__nav ul{
-        @apply flex gap-x-[1.5rem]
-    }
-
-    .header2__nav ul li a{
-        @apply py-[2rem]
-    }
-
-    .header2__nav ul li ul{
-        @apply bg-primary flex flex-col gap-x-[1rem] absolute lg:hidden top-[3rem] opacity-0
-    }
-
-    .header2__nav ul li:hover ul{
-        @apply max-h-fit p-[1rem] w-[15rem] block opacity-100
-    }
-
-    .header2__nav ul li ul li:not(:first-child){
-        @apply mt-[1rem]
-    }
-
-    .header2__nav ul li ul li ul{
-        @apply absolute top-[0] right-[-15rem] opacity-0
-    }
-
-    .header2__nav ul li:hover ul li ul{
-        @apply max-h-fit p-[1rem] w-[15rem] opacity-100
-    }
-
-    .header2__btn{
-        @apply text-light ml-[2rem]
-    }
-
+ /** ---------- BANNER ---------- */
 
     .banner{
         @apply relative
@@ -481,6 +445,75 @@ body{
         @apply max-w-[4rem] mx-auto
     }
 
+    /* -------------------------------------SUBJECT--------------------------------------- */
+    .subject{
+        @apply bg-[url(../dist/img/bg.png)] bg-cover bg-center pt-[5rem] lg:bg-top;
+    }
+    .subject__text{
+        @apply text-center my-[2rem];
+    }
+    .subject__text h6{
+        @apply text-primary font-bold text-[1.5rem];
+    }
+    .subject__text p{
+        @apply text-dark font-bold text-[1.2rem] lg:text-[2.5rem] lg:w-[35rem] mx-auto;
+    }
+    .subject__content{
+        @apply lg:grid lg:grid-cols-3 mx-auto;
+    }
+    .subject__card{
+        @apply relative w-fit mx-auto my-[2rem];
+    }
+    .subject__card__content{
+        @apply bg-white shadow-2xl rounded-md w-[25rem] mx-auto transition-all duration-500;
+    }
+    .subject__card:hover .subject__card__content{
+        @apply -translate-y-5 transition-all duration-500;
+    }
+    .subject__card__img img{
+        @apply w-fit;
+    }
+    .subject__category{
+        @apply flex items-center justify-between w-full;
+    }
+    .subject__category ul{
+        @apply flex items-center justify-between absolute top-5 left-5 w-[23rem];
+    }
+    .subject__category ul li{
+        @apply bg-primary text-white rounded-md p-2 overflow-hidden;
+    }
+    .subject__category ul li:last-child{
+        @apply bg-white text-primary text-[1.2rem] rounded-md p-2 overflow-hidden;
+    }
+    .subject__category span{
+        @apply block bg-white w-5 h-5;
+    }
+    .subject__card__text{
+        @apply p-5 border-b-2 w-fit min-h-[10rem];
+    }
+    .subject__card__text p{
+        @apply flex items-center text-[1rem] text-gray-500 font-semibold;
+    }
+    .subject__card__text h6{
+        @apply text-dark font-semibold text-[1.2rem] hover:text-primary transition-all duration-500;
+    }
+    .subject__card__text span{
+        @apply text-primary;
+    }
+    .subject__card__text p img{
+        @apply w-5 rounded-full;
+    }
+    .subject__card__text p a{
+        @apply text-[#4b5981] mx-1;
+    }
+    .subject__card__actions{
+        @apply p-5 flex items-center justify-between;
+    }
+    .subject__card__actions p{
+        @apply text-[#4b5981] font-semibold;
+    }
+
+
     /** ---------- INSTRUCTOR BANNER ---------- */
 
     .instructor{
@@ -641,12 +674,116 @@ body{
         .news__content .shallow-white{
             @apply text-[1.1rem] font-[500] hover:text-light w-fit lg:pr-[1.5rem]
         }
-    
-    
+
+       /*-----------------------online----------------------*/
+       .online__text__page{
+        @apply text-center font-bold text-[1.5rem] mb-5;
+    }
+    .online__text__page h1{
+        @apply text-primary;
+    }
+    .online__text__page h2{
+        @apply text-dark;
+    }
+        .online__card{
+            @apply border-[.1rem] border-primary p-[2rem] my-[1rem] shadow-md hover:shadow-xl hover:border-white lg:flex lg:items-center lg:gap-4 lg:p-[1rem] lg:w-[33rem] lg:h-[15rem] transition-all duration-500;
+        }
+        .online__card__text{
+            @apply my-[1rem] relative;
+        }
+        .online__card__text p{
+            @apply text-primary font-semibold;
+        } 
+        .online__card__text h2{
+            @apply text-dark font-bold text-[1.5rem];
+        }
+        .online__card__actions{
+            @apply h-[5rem] relative;
+        }
+        .online__card__actions span{
+            @apply inline-block mt-[1rem] z-20 bg-primary w-[2rem] h-[2rem] rounded-full relative transition-all duration-500;
+        } 
+        .online__card__actions span::before{
+            @apply content-[""] block absolute w-[.8rem] lg:w-[.9rem] h-1 bg-white left-[30%] top-[45%];
+        } 
+        .online__card__actions span::after{
+            @apply content-[""] block absolute w-1 h-[.8rem] bg-white left-[45%] top-[30%];
+        } 
+        .online__card__actions a{
+            @apply absolute inline-block w-[7rem] text-center lg:w-[9rem] h-[2rem] lg:h-[2.5rem] lg:text-[1.5rem] opacity-0 left-0 top-0 text-white font-bold p-1 rounded-md transition-all duration-500;
+        } 
+        .online__card__actions a::after{
+            @apply content-[""] block absolute top-0 left-0 rounded-md bg-primary w-0 h-full z-[-1] transition-all duration-500;
+        }
+        .online__card:hover .online__card__actions a::after{
+            @apply w-full h-full transition-all duration-500;
+        }
+        .online__card:hover .online__card__actions a{
+            @apply opacity-100 transition-all duration-500;
+        }
+        .online__card:hover .online__card__actions span{
+            @apply w-0 h-0 transition-all duration-500;
+        }
+        .online__card:hover .online__card__actions span::before{
+            @apply opacity-0 transition-all duration-500;
+        }
+        .online__card:hover .online__card__actions span::after{
+            @apply opacity-0 transition-all duration-500;
+        }
+        .online__content:nth-child(2){
+            @apply block my-[5rem];
+        }
+        .online__cards{
+            @apply lg:flex lg:items-center lg:justify-between;
+        }
+        .online__cards{
+            @apply lg:flex lg:items-center lg:justify-between;
+        }
+        .online__content{
+            @apply block my-[5rem];
+        }
+        .online{
+            @apply bg-[#0EB58208] relative ;
+        }
+        .online__wrapper{
+            @apply py-[2rem];
+        }
+
+      
+    .letter__wrapper{
+            @apply py-[2rem];
+        }
+        .letter__content{
+            @apply absolute -bottom-[710rem] left-0 w-full lg:-bottom-[404rem];
+        }
+        .letter__newsletter{
+            @apply bg-primary px-[1rem] py-[2rem] rounded-md lg:p-[2.5rem] mx-auto lg:w-[80rem]  lg:flex lg:items-center lg:justify-between; 
+        }
+        .letter__newsletter__text h4{
+            @apply text-white font-bold text-[1.5rem]; 
+        }
+        .letter__newsletter__text p{
+            @apply text-white font-semibold text-[1.2rem]; 
+        }
+        .letter__newsletter__actions{
+            @apply mt-[2rem] lg:flex lg:h-[4rem]; 
+        }
+        .letter__newsletter__actions input{
+            @apply p-4 w-full rounded-md lg:rounded-r-none lg:w-[30rem]; 
+        }
+        .letter__newsletter__actions a{
+            @apply bg-gray-700 w-full flex items-center justify-center h-fit p-4 mt-[1rem] lg:m-0 lg:h-full lg:w-[10rem] hover:bg-[#18406b] transition-all duration-500 ; 
+        }
+        .letter__newsletter__actions a i{
+            @apply text-white; 
+        }
+
+
+
     
         /*-----------------------middle-footer----------------------*/
 .footer__middle {
-    @apply bg-lblue
+    @apply bg-lblue lg:pt-[4rem]
 }
 .description__area img{
     @apply  lg:mt-0 flex mx-auto mt-[6rem] lg:pt-[1.8rem] bg-lblue lg:bg-lblue
@@ -696,6 +833,8 @@ body{
     @apply border-t-[1px]
 lg:flex lg:justify-between lg:items-center
 }
+
+
 /*-----------------------PROGRAM----------------------*/
 .prog{
     @apply my-[3rem]
