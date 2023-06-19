@@ -796,7 +796,7 @@ body{
     }
 
     .newsletter__content input{
-        @apply mt-[.2rem] text-[1rem] text-[#b0afaf] px-[1.5rem] py-[1rem] w-full rounded-[.1rem] lg:w-[25rem]
+        @apply mt-[.2rem] text-[1rem] text-[#b0afaf] px-[1.5rem] py-[1rem] w-full rounded-[.1rem] lg:w-[25rem] outline-none;
     }
 
     .newsletter__btn{
